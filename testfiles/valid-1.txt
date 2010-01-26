@@ -1,8 +1,0 @@
-SimJob:		farmid=1
-TestRun: 	algorithmid=1
-Server:	id=0	cost=6	dasd=20	relCat=1	speedCat=1	
-Server:	id=1	cost=5	dasd=20	relCat=1	speedCat=2	
-Job:	id=0	earning=13	dasd=10	startTime=1	duration=10	relCat=1	speedCat=1	penalty=1200	
-Job:	id=1	earning=12	dasd=10	startTime=1	duration=10	relCat=1	speedCat=1	penalty=800	
-Job:	id=2	earning=11	dasd=10	startTime=1	duration=10	relCat=1	speedCat=2	penalty=1200	
-Job:	id=3	earning=10	dasd=10	startTime=1	duration=10	relCat=1	speedCat=2	penalty=800	

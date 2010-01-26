@@ -1,37 +1,0 @@
-8
-
-dir
-488
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/WebContent
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
-
-
-
-2007-09-10T17:05:00.928155Z
-404
-subversion
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-9c50f188-772a-0410-aa9e-d595b821e721
-
-META-INF
-dir
-
-WEB-INF
-dir
-
-wsdl
-dir
-

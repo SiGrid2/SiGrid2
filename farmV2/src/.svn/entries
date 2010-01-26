@@ -1,52 +1,0 @@
-8
-
-dir
-489
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/Farmv2/src
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
-
-
-
-2007-11-07T10:51:51.219899Z
-487
-subversion
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-9c50f188-772a-0410-aa9e-d595b821e721
-
-META-INF
-dir
-
-simobjects
-dir
-
-communication
-dir
-
-farm
-dir
-
-log4j.properties
-file
-
-
-
-
-2007-10-16T14:47:49.747484Z
-341eb3fb2d27ac4beaf4f947564b76b2
-2007-10-16T14:48:32.878185Z
-450
-subversion
-

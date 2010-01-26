@@ -1,52 +1,0 @@
-8
-
-dir
-488
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/src
-svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
-
-
-
-2007-11-07T09:45:39.640661Z
-481
-subversion
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-9c50f188-772a-0410-aa9e-d595b821e721
-
-META-INF
-dir
-
-simobjects
-dir
-
-controler
-dir
-
-log4j.properties
-file
-
-
-
-
-2007-09-10T16:44:24.969132Z
-bf210e7aed3ecc36d2c81f56412a4df0
-2007-06-26T19:48:52.459532Z
-383
-subversion
-
-layoutmaker
-dir
-

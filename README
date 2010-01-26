@@ -1,0 +1,9 @@
+sigrid2.pdf 
+	Install Docu for IDE based SiGrid development
+	
+SiGrid2.zip
+	zip archive of the project (when downloading via http://github.com/SiGrid2/SiGrid2.git/SiGrid2.zip, you have to rename 
+	the saved file to "SiGrid2.zip" manually - the download-filename "blob" is not of much use ;-)
+	
+valid-1.txt
+	sample Testrun file for batch use

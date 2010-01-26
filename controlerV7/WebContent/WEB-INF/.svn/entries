@@ -1,0 +1,61 @@
+8
+
+dir
+488
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/WebContent/WEB-INF
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-09-10T17:05:00.928155Z
+404
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9c50f188-772a-0410-aa9e-d595b821e721
+
+FarmWSService
+dir
+
+lib
+dir
+
+controler
+dir
+
+server-config.wsdd
+file
+
+
+
+
+2007-09-10T17:06:46.878704Z
+2d7c4f618dc63751ba8b08f25aff845f
+2007-09-10T17:05:00.928155Z
+404
+subversion
+
+web.xml
+file
+
+
+
+
+2007-09-10T17:06:46.918761Z
+241b106d316691a5c36ad73c915f93e4
+2007-09-10T17:05:00.928155Z
+404
+subversion
+

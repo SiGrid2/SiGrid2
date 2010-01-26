@@ -1,0 +1,28 @@
+8
+
+dir
+489
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/Farmv2/src/farm/master/layoutreader
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-09-15T14:11:29.862533Z
+407
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+AsciiReader.java
+file
+512
+
+
+
+2007-11-25T14:51:55.769698Z
+17070a21d05abbce2aa01a7fddc4218c
+2007-11-25T15:41:11.933990Z
+512
+subversion
+

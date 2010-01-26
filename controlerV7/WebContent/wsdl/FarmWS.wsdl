@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://axis.farm.communication.controler" xmlns:intf="http://axis.farm.communication.controler" xmlns:tns1="http://farm.transport.simobjects" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://axis.farm.communication.controler">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://axis.farm.communication.controler">
+   <import namespace="http://farm.transport.simobjects"/>
+   <element name="register">
+    <complexType>
+     <sequence>
+      <element name="initID" type="xsd:long"/>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registerResponse">
+    <complexType>
+     <sequence>
+      <element name="registerReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unregister">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="initID" type="xsd:long"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="unregisterResponse">
+    <complexType/>
+   </element>
+   <element name="getActionFromControler">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getActionFromControlerResponse">
+    <complexType>
+     <sequence>
+      <element name="getActionFromControlerReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTestRun">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTestRunResponse">
+    <complexType>
+     <sequence>
+      <element name="getTestRunReturn" type="tns1:TestrunAxis"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_JobAxis">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:JobAxis"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_ServerAxis">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ServerAxis"/>
+    </sequence>
+   </complexType>
+   <element name="loadedSim">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loadedSimResponse">
+    <complexType/>
+   </element>
+   <element name="startedSim">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="startedSimResponse">
+    <complexType/>
+   </element>
+   <element name="abortedSim">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="abortedSimResponse">
+    <complexType/>
+   </element>
+   <element name="finishedSim">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="finishedSimResponse">
+    <complexType/>
+   </element>
+   <element name="addSimResult">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+      <element name="simResult" type="tns1:SimResultAxis"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addSimResultResponse">
+    <complexType/>
+   </element>
+   <element name="addSimLogMessage">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addSimLogMessageResponse">
+    <complexType/>
+   </element>
+   <element name="addSimStatistics">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+      <element name="stats" type="tns1:SimStatisticsAxis"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_long">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <element name="addSimStatisticsResponse">
+    <complexType/>
+   </element>
+   <element name="setSimState">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="trID" type="xsd:int"/>
+      <element name="simState" type="tns1:SimStateAxis"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setSimStateResponse">
+    <complexType/>
+   </element>
+   <element name="setReceiverState">
+    <complexType>
+     <sequence>
+      <element name="receiverID" type="xsd:int"/>
+      <element name="receiverState" type="tns1:ReceiverStateAxis"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setReceiverStateResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://farm.transport.simobjects">
+   <import namespace="http://axis.farm.communication.controler"/>
+   <complexType name="AlgorithmAxis">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="JobAxis">
+    <sequence>
+     <element name="dasd" type="xsd:int"/>
+     <element name="duration" type="xsd:int"/>
+     <element name="earning" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="penalty" type="xsd:int"/>
+     <element name="relCat" type="xsd:int"/>
+     <element name="speedCat" type="xsd:int"/>
+     <element name="startTime" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="ServerAxis">
+    <sequence>
+     <element name="cost" type="xsd:int"/>
+     <element name="dasd" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="relCat" type="xsd:int"/>
+     <element name="speedCat" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="LayoutAxis">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="jobs" nillable="true" type="impl:ArrayOf_tns1_JobAxis"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="server" nillable="true" type="impl:ArrayOf_tns1_ServerAxis"/>
+    </sequence>
+   </complexType>
+   <complexType name="TestrunAxis">
+    <sequence>
+     <element name="algorithm" nillable="true" type="tns1:AlgorithmAxis"/>
+     <element name="id" type="xsd:int"/>
+     <element name="layout" nillable="true" type="tns1:LayoutAxis"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="statsEnd" type="xsd:long"/>
+     <element name="statsNumFields" type="xsd:int"/>
+     <element name="statsStart" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="MatrixAxis">
+    <sequence>
+     <element name="matrixForDB" nillable="true" type="xsd:string"/>
+     <element name="numJobs" type="xsd:int"/>
+     <element name="numServer" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="SimResultAxis">
+    <sequence>
+     <element name="earning" type="xsd:long"/>
+     <element name="id" type="xsd:int"/>
+     <element name="matrix" nillable="true" type="tns1:MatrixAxis"/>
+    </sequence>
+   </complexType>
+   <complexType name="SimStatisticsAxis">
+    <sequence>
+     <element name="end" type="xsd:long"/>
+     <element name="fields" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="numStatisticsAcc" type="xsd:int"/>
+     <element name="start" type="xsd:long"/>
+     <element name="statistic" nillable="true" type="impl:ArrayOf_xsd_long"/>
+     <element name="tick" type="xsd:double"/>
+    </sequence>
+   </complexType>
+   <complexType name="SimStateAxis">
+    <sequence>
+     <element name="progress" type="xsd:int"/>
+     <element name="runtime" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ReceiverStateAxis">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="initID" type="xsd:long"/>
+     <element name="state" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="startedSimResponse">
+
+      <wsdl:part element="impl:startedSimResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadedSimResponse">
+
+      <wsdl:part element="impl:loadedSimResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="loadedSimRequest">
+
+      <wsdl:part element="impl:loadedSim" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unregisterResponse">
+
+      <wsdl:part element="impl:unregisterResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="abortedSimResponse">
+
+      <wsdl:part element="impl:abortedSimResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="startedSimRequest">
+
+      <wsdl:part element="impl:startedSim" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimLogMessageRequest">
+
+      <wsdl:part element="impl:addSimLogMessage" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimLogMessageResponse">
+
+      <wsdl:part element="impl:addSimLogMessageResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTestRunRequest">
+
+      <wsdl:part element="impl:getTestRun" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setReceiverStateRequest">
+
+      <wsdl:part element="impl:setReceiverState" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTestRunResponse">
+
+      <wsdl:part element="impl:getTestRunResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActionFromControlerResponse">
+
+      <wsdl:part element="impl:getActionFromControlerResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActionFromControlerRequest">
+
+      <wsdl:part element="impl:getActionFromControler" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerResponse">
+
+      <wsdl:part element="impl:registerResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSimStateRequest">
+
+      <wsdl:part element="impl:setSimState" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="finishedSimResponse">
+
+      <wsdl:part element="impl:finishedSimResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimResultResponse">
+
+      <wsdl:part element="impl:addSimResultResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimStatisticsResponse">
+
+      <wsdl:part element="impl:addSimStatisticsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setReceiverStateResponse">
+
+      <wsdl:part element="impl:setReceiverStateResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimStatisticsRequest">
+
+      <wsdl:part element="impl:addSimStatistics" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="abortedSimRequest">
+
+      <wsdl:part element="impl:abortedSim" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="finishedSimRequest">
+
+      <wsdl:part element="impl:finishedSim" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addSimResultRequest">
+
+      <wsdl:part element="impl:addSimResult" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="setSimStateResponse">
+
+      <wsdl:part element="impl:setSimStateResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registerRequest">
+
+      <wsdl:part element="impl:register" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="unregisterRequest">
+
+      <wsdl:part element="impl:unregister" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FarmWS">
+
+      <wsdl:operation name="register">
+
+         <wsdl:input message="impl:registerRequest" name="registerRequest"/>
+
+         <wsdl:output message="impl:registerResponse" name="registerResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unregister">
+
+         <wsdl:input message="impl:unregisterRequest" name="unregisterRequest"/>
+
+         <wsdl:output message="impl:unregisterResponse" name="unregisterResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActionFromControler">
+
+         <wsdl:input message="impl:getActionFromControlerRequest" name="getActionFromControlerRequest"/>
+
+         <wsdl:output message="impl:getActionFromControlerResponse" name="getActionFromControlerResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTestRun">
+
+         <wsdl:input message="impl:getTestRunRequest" name="getTestRunRequest"/>
+
+         <wsdl:output message="impl:getTestRunResponse" name="getTestRunResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadedSim">
+
+         <wsdl:input message="impl:loadedSimRequest" name="loadedSimRequest"/>
+
+         <wsdl:output message="impl:loadedSimResponse" name="loadedSimResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="startedSim">
+
+         <wsdl:input message="impl:startedSimRequest" name="startedSimRequest"/>
+
+         <wsdl:output message="impl:startedSimResponse" name="startedSimResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="abortedSim">
+
+         <wsdl:input message="impl:abortedSimRequest" name="abortedSimRequest"/>
+
+         <wsdl:output message="impl:abortedSimResponse" name="abortedSimResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="finishedSim">
+
+         <wsdl:input message="impl:finishedSimRequest" name="finishedSimRequest"/>
+
+         <wsdl:output message="impl:finishedSimResponse" name="finishedSimResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimResult">
+
+         <wsdl:input message="impl:addSimResultRequest" name="addSimResultRequest"/>
+
+         <wsdl:output message="impl:addSimResultResponse" name="addSimResultResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimLogMessage">
+
+         <wsdl:input message="impl:addSimLogMessageRequest" name="addSimLogMessageRequest"/>
+
+         <wsdl:output message="impl:addSimLogMessageResponse" name="addSimLogMessageResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimStatistics">
+
+         <wsdl:input message="impl:addSimStatisticsRequest" name="addSimStatisticsRequest"/>
+
+         <wsdl:output message="impl:addSimStatisticsResponse" name="addSimStatisticsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSimState">
+
+         <wsdl:input message="impl:setSimStateRequest" name="setSimStateRequest"/>
+
+         <wsdl:output message="impl:setSimStateResponse" name="setSimStateResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setReceiverState">
+
+         <wsdl:input message="impl:setReceiverStateRequest" name="setReceiverStateRequest"/>
+
+         <wsdl:output message="impl:setReceiverStateResponse" name="setReceiverStateResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FarmWSSoapBinding" type="impl:FarmWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="register">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="unregister">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="unregisterRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="unregisterResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActionFromControler">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getActionFromControlerRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getActionFromControlerResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTestRun">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTestRunRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTestRunResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="loadedSim">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loadedSimRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loadedSimResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="startedSim">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="startedSimRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="startedSimResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="abortedSim">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="abortedSimRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="abortedSimResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="finishedSim">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="finishedSimRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="finishedSimResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimResult">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addSimResultRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addSimResultResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimLogMessage">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addSimLogMessageRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addSimLogMessageResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addSimStatistics">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addSimStatisticsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addSimStatisticsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setSimState">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setSimStateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setSimStateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setReceiverState">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setReceiverStateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setReceiverStateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FarmWSService">
+
+      <wsdl:port binding="impl:FarmWSSoapBinding" name="FarmWS">
+
+         <wsdlsoap:address location="http://localhost:8080/controllerv7/services/FarmWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

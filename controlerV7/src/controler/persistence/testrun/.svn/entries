@@ -1,0 +1,52 @@
+8
+
+dir
+488
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/src/controler/persistence/testrun
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-11-06T15:35:15.727134Z
+467
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9c50f188-772a-0410-aa9e-d595b821e721
+
+ITestrunDAO.java
+file
+
+
+
+
+2007-11-07T07:34:41.420452Z
+d80e45a9f1cf22aae8d75eb3200737c8
+2007-11-06T15:35:15.727134Z
+467
+subversion
+
+TestrunDAOJPA.java
+file
+
+
+
+
+2007-11-07T07:34:41.420452Z
+13203afb4b44f67162a846546fe9853c
+2007-11-06T15:35:15.727134Z
+467
+subversion
+

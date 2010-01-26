@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from FarmWSService WSDL service -->
+
+  <service name="FarmWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://axis.farm.communication.controler"/>
+      <parameter name="wsdlServiceElement" value="FarmWSService"/>
+      <parameter name="schemaQualified" value="http://farm.transport.simobjects,http://axis.farm.communication.controler"/>
+      <parameter name="wsdlServicePort" value="FarmWS"/>
+      <parameter name="className" value="controler.communication.farm.axis.FarmWS"/>
+      <parameter name="wsdlPortType" value="FarmWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" xmlns:retNS="http://axis.farm.communication.controler" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="register" qname="operNS:register" returnQName="retNS:registerReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:initID" type="tns:long"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="unregister" qname="operNS:unregister" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:initID" type="tns:long"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" xmlns:retNS="http://axis.farm.communication.controler" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getActionFromControler" qname="operNS:getActionFromControler" returnQName="retNS:getActionFromControlerReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" xmlns:retNS="http://axis.farm.communication.controler" xmlns:rtns="http://farm.transport.simobjects" name="getTestRun" qname="operNS:getTestRun" returnQName="retNS:getTestRunReturn" returnType="rtns:TestrunAxis" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="loadedSim" qname="operNS:loadedSim" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="startedSim" qname="operNS:startedSim" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="abortedSim" qname="operNS:abortedSim" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="finishedSim" qname="operNS:finishedSim" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="addSimResult" qname="operNS:addSimResult" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://farm.transport.simobjects" qname="pns:simResult" type="tns:SimResultAxis"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="addSimLogMessage" qname="operNS:addSimLogMessage" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="addSimStatistics" qname="operNS:addSimStatistics" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://farm.transport.simobjects" qname="pns:stats" type="tns:SimStatisticsAxis"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="setSimState" qname="operNS:setSimState" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:trID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://farm.transport.simobjects" qname="pns:simState" type="tns:SimStateAxis"/>
+      </operation>
+      <operation xmlns:operNS="http://axis.farm.communication.controler" name="setReceiverState" qname="operNS:setReceiverState" soapAction="">
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receiverID" type="tns:int"/>
+        <parameter xmlns:pns="http://axis.farm.communication.controler" xmlns:tns="http://farm.transport.simobjects" qname="pns:receiverState" type="tns:ReceiverStateAxis"/>
+      </operation>
+      <parameter name="allowedMethods" value="abortedSim unregister loadedSim setSimState setReceiverState getActionFromControler finishedSim startedSim addSimLogMessage getTestRun addSimStatistics addSimResult register"/>
+
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:SimResultAxis" type="java:simobjects.transport.farm.SimResultAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:LayoutAxis" type="java:simobjects.transport.farm.LayoutAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:MatrixAxis" type="java:simobjects.transport.farm.MatrixAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:ServerAxis" type="java:simobjects.transport.farm.ServerAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:SimStateAxis" type="java:simobjects.transport.farm.SimStateAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://axis.farm.communication.controler" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:AlgorithmAxis" type="java:simobjects.transport.farm.AlgorithmAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://axis.farm.communication.controler" xmlns:cmp-ns="http://farm.transport.simobjects" qname="ns:ArrayOf_tns1_JobAxis" type="java:simobjects.transport.farm.JobAxis[]" innerType="cmp-ns:JobAxis" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:SimStatisticsAxis" type="java:simobjects.transport.farm.SimStatisticsAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:JobAxis" type="java:simobjects.transport.farm.JobAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:ReceiverStateAxis" type="java:simobjects.transport.farm.ReceiverStateAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://axis.farm.communication.controler" xmlns:cmp-ns="http://farm.transport.simobjects" qname="ns:ArrayOf_tns1_ServerAxis" type="java:simobjects.transport.farm.ServerAxis[]" innerType="cmp-ns:ServerAxis" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://farm.transport.simobjects" qname="ns:TestrunAxis" type="java:simobjects.transport.farm.TestrunAxis" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

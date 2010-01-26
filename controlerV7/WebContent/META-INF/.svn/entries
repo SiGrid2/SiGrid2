@@ -1,0 +1,40 @@
+8
+
+dir
+488
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/WebContent/META-INF
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-06-26T19:48:52.459532Z
+383
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9c50f188-772a-0410-aa9e-d595b821e721
+
+MANIFEST.MF
+file
+
+
+
+
+2007-09-10T16:44:25.329651Z
+92d04d6bd8a0235843240bba30d2f091
+2007-06-26T19:48:52.459532Z
+383
+subversion
+

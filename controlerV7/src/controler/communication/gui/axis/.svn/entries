@@ -1,0 +1,52 @@
+8
+
+dir
+488
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/src/controler/communication/gui/axis
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-11-06T14:32:08.041094Z
+465
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9c50f188-772a-0410-aa9e-d595b821e721
+
+GuiWebservice.java
+file
+
+
+
+
+2007-11-07T07:34:39.617860Z
+caa1f6760b19ae611d408fcec023ffed
+2007-11-06T14:32:08.041094Z
+465
+subversion
+
+IGuiWebservice.java
+file
+
+
+
+
+2007-11-07T07:34:39.647904Z
+1649a9ae3e6fba74ff08fde2229cd0e7
+2007-11-06T14:32:08.041094Z
+465
+subversion
+

@@ -1,0 +1,64 @@
+8
+
+dir
+488
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test/controllerv7/src/controler
+svn+ssh://subversion@si-grid.de/home/subversion/subversion/test
+
+
+
+2007-11-07T09:45:39.640661Z
+481
+subversion
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9c50f188-772a-0410-aa9e-d595b821e721
+
+helper
+dir
+
+MicroControler.java
+file
+
+
+
+
+2007-11-25T13:35:22.444822Z
+3b70c53e17e7b96904cf5abd27648cef
+2007-11-06T16:04:45.661758Z
+468
+subversion
+
+persistence
+dir
+
+queue
+dir
+
+communication
+dir
+
+Controler.java
+file
+
+
+
+
+2007-11-07T07:34:42.061374Z
+b6797328f9273d2c0e54f0718e4b8be8
+2007-11-06T16:04:45.661758Z
+468
+subversion
+

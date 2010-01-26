@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 U (http://www.altova.com) by rantanplan (rantanplan corp.) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="SiGridLayout">
+		<xs:annotation>
+			<xs:documentation>SiGrid-Simulations-Layout</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sla" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Service-Level-Agreement</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="earning" type="xs:int"/>
+							<xs:element name="dasd" type="xs:int"/>
+							<xs:element name="speed-cat" type="xs:int"/>
+							<xs:element name="rel-cat" type="xs:int"/>
+							<xs:element name="starttime" type="xs:int"/>
+							<xs:element name="duration" type="xs:int"/>
+							<xs:element name="penalty" type="xs:long"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sn" maxOccurs="25">
+					<xs:annotation>
+						<xs:documentation>Grid-Speichernetzwerk</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="cost" type="xs:int"/>
+							<xs:element name="dasd" type="xs:int"/>
+							<xs:element name="speed-cat" type="xs:int"/>
+							<xs:element name="rel-cat" type="xs:int"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
